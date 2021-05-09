@@ -1,0 +1,32 @@
+{
+  "name": "sdc-q-a",
+  "version": "1.0.0",
+  "description": "SDC-Q&A",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon server.js",
+    "populate_questions": "node seeding_files/populateQuestions.js",
+    "populate_answers": "node seeding_files/populateAnswers.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raulm91/SDC-Q-A.git"
+  },
+  "author": "Raul Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raulm91/SDC-Q-A/issues"
+  },
+  "homepage": "https://github.com/raulm91/SDC-Q-A#readme",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "express": "^4.17.1",
+    "fast-csv": "^4.3.6",
+    "line-input-stream": "^1.0.1",
+    "mongoose": "^5.12.7",
+    "nodemon": "^2.0.7"
+  }
+}

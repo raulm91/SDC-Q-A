@@ -1,9 +1,10 @@
-DROP DATABASE Q&A IF EXISTS;
+DROP SCHEMA QA;
 
-CREATE Q&A;
-USE Q&A
+CREATE SCHEMA QA;
 
-CREATE TABLE questions(
+DROP TABLE IF EXISTS questions;
+
+CREATE TABLE QA.questions(
   id INT NOT NULL PRIMARY KEY,
   user_id INT NOT NULL,
   question_body INT NOT NULL,
@@ -14,7 +15,9 @@ CREATE TABLE questions(
   FOREIGN KEY (user_id) REFERENCES users(id)
 )
 
-CREATE TABLE answers(
+DROP TABLE IF EXISTS answers;
+
+CREATE TABLE QA.answers(
   id INT NOT NULL PRIMARY KEY
   user_id INT NOT NULL,
   body VARCHAR(255),
@@ -26,7 +29,9 @@ CREATE TABLE answers(
   FOREIGN KEY (user_id) REFERENCES users(id)
 )
 
-CREATE TABLE users(
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE QA.users(
   id INT NOT NULL PRIMARY KEY,
   user_name VARCHAR(100),
   e-mail VARCHAR(150),
