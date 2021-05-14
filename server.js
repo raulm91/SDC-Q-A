@@ -13,7 +13,7 @@ app.listen(PORT, () => {
   console.log(`successfully connected to port ${PORT}`)
 });
 
-mongoose.connect('mongodb://54.219.22.251:27017/questions', { useNewUrlParser: true }, { useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/questions', { useNewUrlParser: true }, { useUnifiedTopology: true })
   .then(() => {
     console.log('connecting to mongo!')
   })
