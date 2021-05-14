@@ -7,7 +7,7 @@
     "test": "test",
     "start": "nodemon server.js",
     "populate_questions": "node seeding_files/populateQuestions.js",
-    "populate_answers": "node seeding_files/populateAnswers.js"
+    "populate_photos": "node seeding_files/populatePhotos.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/raulm91/SDC-Q-A#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "csv-parser": "^3.0.0",
     "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",

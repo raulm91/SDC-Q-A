@@ -3,55 +3,33 @@ const { Schema } = mongoose;
 
 const questionsSchema = mongoose.Schema({
 
+  id: { type: Number },
   product_id: {
-    type: String,
+    type: Number, index: true
   },
   question_id: {
-    type: String,
+    type: Number, index: true
   },
-  question_body: {
-    type: String,
+  answer_id: {
+    type: String, index: true
   },
-  question_date: {
-    type: String,
-  },
-  asker_name: {
-    type: String,
-  },
-  question_helpfulness: {
-    type: String,
-  },
-  reported: {
-    type: String,
-  },
-  answers: [{
-    answer_id: {
-      type: String,
-    },
-    body: {
-      type: String,
-    },
-    date: {
-      type: String,
-    },
-    answerer_name: {
-      type: String,
-    },
-    helpfulness: {
-      type: String,
-    },
-    photos: [{
-      id: {
-        type: String,
-      },
-      url: {
-        type: String,
-      },
-    }],
+  question_body: String,
+  question_date: String,
+  asker_name: String,
+  question_helpfulness: String,
+  reported: String,
+  answer_body: String,
+  answer_date: String,
+  answerer_name: String,
+  answer_helpfulness: String,
+  photos: [{
+    photo_id: String,
+    url: String,
   }],
 
 });
-questionsSchema.index({ id: 1 });
+
+questionsSchema.index({ question_id: 1, product_id: 1 });
 const Question = mongoose.model('Question', questionsSchema);
 
 module.exports = Question;
