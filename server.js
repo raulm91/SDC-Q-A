@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const Question = require('./mongoose/questionsSchema.js');
 const PORT = 3000;
+const path = require('path');
 
 var app = express();
 app.use(bodyparser.json());
@@ -12,6 +13,8 @@ app.use(express.json());
 app.listen(PORT, () => {
   console.log(`successfully connected to port ${PORT}`)
 });
+
+
 
 mongoose.connect('mongodb://localhost:27017/questions', { useNewUrlParser: true }, { useUnifiedTopology: true })
   .then(() => {
@@ -23,9 +26,17 @@ mongoose.connect('mongodb://localhost:27017/questions', { useNewUrlParser: true 
 
 const db = mongoose.connection;
 
+app.get('loaderio-2df3fdbcdf44fa202ce4049648896499', (req, res) => {
+  res.sendFile(path.join(__dirname, '../loaderio-2df3fdbcdf44fa202ce4049648896499.txt'));
+});
+
 //POST requests for questions and answers
 
 Question.collection.insertOne('/qa/:question_id/answers', (req, res) => {
+
+  app.post('/qa/questions', (req, res) => {
+
+  })
 
 })
 
@@ -46,12 +57,10 @@ app.get('/qa/questions', (req, res) => {
     .catch(err => {
       console.log(err)
     })
-
 });
 
 app.get('/qa/questions/:question_id/answers', (req, res) => {
-  console.log(req.params, 'REQPARAMS~!!!!!!!!!!!!!!!')
-  console.log(req.query, 'REQBODY~!!!!!!!!')
+
   let question_id = Number(req.query.question_id)
   let page = Number(req.query.page);
   let count = Number(req.query.count);

@@ -7,7 +7,10 @@
     "test": "test",
     "start": "nodemon server.js",
     "populate_questions": "node seeding_files/populateQuestions.js",
-    "populate_photos": "node seeding_files/populatePhotos.js"
+    "populate_photos": "node seeding_files/populatePhotos.js",
+    "stressQuestionsGET": "k6 run testing/stressQuestionsGET.js",
+    "stressAnswersGET": "k6 run testing/stressAnswersGET.js",
+    "stressQuestionsPUT": "k6 run testing/stressQuestionsPUT.js"
   },
   "repository": {
     "type": "git",
