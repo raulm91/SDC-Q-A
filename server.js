@@ -27,7 +27,7 @@ mongoose.connect('mongodb://localhost:27017/questions', { useNewUrlParser: true 
 const db = mongoose.connection;
 
 app.get('/loaderio-2df3fdbcdf44fa202ce4049648896499/', (req, res) => {
-  res.sendFile('loaderio-2df3fdbcdf44fa202ce4049648896499');
+  res.send('loaderio-2df3fdbcdf44fa202ce4049648896499');
 });
 
 //POST requests for questions and answers
